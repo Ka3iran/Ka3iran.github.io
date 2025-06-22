@@ -22,6 +22,31 @@
       color: var(--text);
       overflow-x: hidden;
     }
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: var(--light-pink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      color: var(--pink);
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .bunny {
+      font-size: 3em;
+      animation: bunnyBounce 1s infinite ease-in-out;
+      margin-bottom: 10px;
+    }
+
+    @keyframes bunnyBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
 
     header {
       background: var(--white);
@@ -169,7 +194,7 @@
 </head>
 <body>
   <header>
-    <h1>ka3iran</h1>
+    <h1>Ka3iran</h1>
     <p>WELCOME TO THE BUNNY NATION ! 💖</p>
   </header>
 
@@ -202,19 +227,19 @@
       <li>🎀 Tuesday - 6 PM CST</li>
       <li>🎀 Wednesday - 6 PM CST</li>
       <li>🎀 Thursday - 6 PM CST</li>
-      <li>🎀 Friday - 6 PM CST</li>
+      <li>🎀 Frighten Friday - 6 PM CST</li>
       <li>🎀 Saturday - 6 PM CST</li>
       <li>🎀 Sunday - 6 PM CST</li>
     </ul>
   </section>
 
   <section id="vods">
-    <h2>My Clips</h2>
+    <h2>My Moments on YT <3 </h2>
     <div class="vods-container">
       <iframe 
         width="250" 
         height="450" 
-        src="https://www.youtube.com/embed/MkRA3IYGf1M" 
+        src="https://www.youtube.com/embed/VaUrI5mNN3g" 
         title="YouTube Shorts 1"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -234,7 +259,7 @@
       <iframe 
         width="250" 
         height="450" 
-        src="https://www.youtube.com/embed/Iw5wiDJkMRM" 
+        src="https://www.youtube.com/embed/zs7hQYkTlus" 
         title="YouTube Shorts 3"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
