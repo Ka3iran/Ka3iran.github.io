@@ -22,6 +22,7 @@
       color: var(--text);
       overflow-x: hidden;
     }
+
     #preloader {
       position: fixed;
       top: 0; left: 0;
@@ -193,6 +194,14 @@
   </style>
 </head>
 <body>
+
+  <!-- Preloader Start -->
+  <div id="preloader">
+    <div class="bunny">🐰</div>
+    Loading...
+  </div>
+  <!-- Preloader End -->
+
   <header>
     <h1>Ka3iran</h1>
     <p>WELCOME TO THE BUNNY NATION ! 💖</p>
@@ -300,6 +309,15 @@
     }
 
     setInterval(createHeart, 400);
+
+    // Hide preloader when everything is loaded
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 600);
+    });
   </script>
 </body>
 </html>
