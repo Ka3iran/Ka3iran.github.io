@@ -191,6 +191,28 @@
       width: 250px;
       height: 450px;
     }
+
+    #special {
+      background: var(--bg-card);
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 25px;
+      border-left: 8px solid var(--pink);
+      border-radius: 20px;
+      text-align: center;
+      animation: popUp 1s ease-out;
+    }
+
+    #special h2 {
+      color: var(--pink);
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #special p {
+      font-size: 1.3em;
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
@@ -198,7 +220,7 @@
   <!-- Preloader Start -->
   <div id="preloader">
     <div class="bunny">🐰</div>
-    Leaping into the bun-zone...
+    Leaping into the bun-cafe...
   </div>
   <!-- Preloader End -->
 
@@ -219,7 +241,7 @@
   <section id="home">
     <h2>Live Streams</h2>
     <iframe
-      src="https://player.twitch.tv/?channel=ka3iran&parent=Ka3iran.github.io"
+      src="https://player.twitch.tv/?channel=ka3iran&parent=ka3iran.github.io"
       allowfullscreen>
     </iframe>
   </section>
@@ -229,51 +251,32 @@
     <p>Ka3iran is a professional snack hoarder carrying the vibes not the team :). I love playing cozy games, chatting with you all and spreading positive vibes. Come join the fun!</p>
   </section>
 
+  <!-- Today's Special -->
+  <section id="special">
+    <h2>🍓 Today's Special</h2>
+    <p id="special-item">Loading the treat...</p>
+  </section>
+
+  <!-- Streaming Schedule -->
   <section id="schedule">
     <h2>Streaming Schedule</h2>
     <ul>
-      <li>🎀 Monday - 6 PM CST</li>
-      <li>🎀 Tuesday - 6 PM CST</li>
-      <li>🎀 Wednesday - 6 PM CST</li>
-      <li>🎀 Thursday - 6 PM CST</li>
-      <li>🎀 Frighten Friday - 6 PM CST</li>
-      <li>🎀 Saturday - 6 PM CST</li>
-      <li>🎀 Sunday - 6 PM CST</li>
+      <li>🎀 Monday - Matcha Macaron + Minecraft 🌿⛏️ - 6PM CST</li>
+      <li>🎀 Tuesday - Strawberry Cream Bun + Cozy Game Vibes 🎮☕ - 6PM CST</li>
+      <li>🎀 Wednesday - Cinnamon Roll + Fortnite 🎯🍂 - 6PM CST</li>
+      <li>🎀 Thursday - Bunny Mochi & Just Chatting Hours 🐇💬 - 6PM CST</li>
+      <li>🎀 Frighten Friday - Carrot Cake + Cozy Horror Night 🎃💗 - 6PM CST</li>
+      <li>🎀 Saturday - Peach Tea Latte with Viewer Games 🍑🫖 - 6PM CST</li>
+      <li>🎀 Sunday - Vanilla Donut & Weekly Wrap Chat 🍩💬 - 6PM CST</li>
     </ul>
   </section>
 
   <section id="vods">
     <h2>My Moments on YT <3 </h2>
     <div class="vods-container">
-      <iframe 
-        width="250" 
-        height="450" 
-        src="https://www.youtube.com/embed/VaUrI5mNN3g" 
-        title="YouTube Shorts 1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-
-      <iframe 
-        width="250" 
-        height="450" 
-        src="https://www.youtube.com/embed/xRVGXiCxGSk" 
-        title="YouTube Shorts 2"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-
-      <iframe 
-        width="250" 
-        height="450" 
-        src="https://www.youtube.com/embed/zs7hQYkTlus" 
-        title="YouTube Shorts 3"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/VaUrI5mNN3g" title="YouTube Shorts 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/xRVGXiCxGSk" title="YouTube Shorts 2" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/zs7hQYkTlus" title="YouTube Shorts 3" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -302,21 +305,32 @@
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.fontSize = (Math.random() * 12 + 16) + "px";
       document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
+      setTimeout(() => heart.remove(), 6000);
     }
 
     setInterval(createHeart, 400);
 
-    // Hide preloader when everything is loaded
     window.addEventListener("load", function () {
       const preloader = document.getElementById("preloader");
       preloader.style.opacity = "0";
       setTimeout(() => {
         preloader.style.display = "none";
       }, 600);
+    });
+
+    const specials = [
+      "Strawberry Cream Bun + Cozy Game Vibes 🎮☕",
+      "Matcha Macaron & a Side of Stardew 🌿🌸",
+      "Cinnamon Roll + Chill Animal Crossing Stream 🍂🎮",
+      "Bunny Mochi & Just Chatting Hours 🐇💬",
+      "Carrot Cake + Cozy Horror Night 🎃💗",
+      "Peach Tea Latte with Viewer Games 🍑🫖",
+      "Vanilla Donut & Weekly Wrap Chat 🍩💬"
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const item = specials[new Date().getDay() % specials.length];
+      document.getElementById("special-item").innerText = item;
     });
   </script>
 </body>
