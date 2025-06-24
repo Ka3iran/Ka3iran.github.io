@@ -320,8 +320,8 @@
 
     const specials = [
       "Strawberry Cream Bun + Cozy Game Vibes 🎮☕",
-      "Matcha Macaron & a Side of Stardew 🌿🌸",
-      "Cinnamon Roll + Chill Animal Crossing Stream 🍂🎮",
+      "Matcha Macaron & a Minecraft 🌿🌸",
+      "Cinnamon Roll + Stream break <3 🍂🎮",
       "Bunny Mochi & Just Chatting Hours 🐇💬",
       "Carrot Cake + Cozy Horror Night 🎃💗",
       "Peach Tea Latte with Viewer Games 🍑🫖",
@@ -333,5 +333,23 @@
       document.getElementById("special-item").innerText = item;
     });
   </script>
+  <footer id="footer-bun" style="text-align:center; padding: 20px; background: var(--accent); border-top: 2px dashed var(--pink); font-size: 1.1em;">
+  <p id="footer-text">Serving smiles daily from the bun-café 🐇✨</p>
+</footer>
+
+<script>
+  // Animate footer text with a gentle fade-in from below
+  const footerText = document.getElementById("footer-text");
+  footerText.style.opacity = 0;
+  footerText.style.transform = "translateY(10px)";
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      footerText.style.transition = "opacity 1.4s ease, transform 1.4s ease";
+      footerText.style.opacity = 1;
+      footerText.style.transform = "translateY(0)";
+    }, 800); // delay to allow rest of the page to load in
+  });
+</script>
+
 </body>
 </html>
